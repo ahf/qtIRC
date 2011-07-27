@@ -18,6 +18,8 @@ public:
     ~MainWindow();
 
 private:
+    void append(const QString& line);
+
     Ui::MainWindow *ui;
 };
 

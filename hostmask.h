@@ -1,6 +1,8 @@
 #ifndef HOSTMASK_H
 #define HOSTMASK_H
 
+// nick!~ahf@hostname
+
 #include <QString>
 
 class Hostmask

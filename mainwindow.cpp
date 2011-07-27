@@ -14,3 +14,8 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+void MainWindow::append(const QString &line)
+{
+    ui->chatView->append(line);
+}
