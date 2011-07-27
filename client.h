@@ -40,13 +40,9 @@ public:
     void sendJoin(const QString& channel);
     void sendQuit(const QString& message);
 
-    void nicknameChanged(const QString& oldNickname, const QString& newNickname);
-
 signals:
     void ReceivedMessage(const Message& message);
     void Connected();
-
-    void NicknameChanged(const QString& oldNickname, const QString& newNickname);
 
 private slots:
     void readData();

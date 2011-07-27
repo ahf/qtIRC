@@ -44,11 +44,6 @@ void Client::sendQuit(const QString &message)
     writeLine(QString("QUIT :%1").arg(message));
 }
 
-void Client::nicknameChanged(const QString &oldNickname, const QString &newNickname)
-{
-    emit NicknameChanged(oldNickname, newNickname);
-}
-
 void Client::connectToServer()
 {
     _socket->connectToHostEncrypted(_server_hostname, _server_port);

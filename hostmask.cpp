@@ -37,7 +37,7 @@ Hostmask Hostmask::parse(const QString &l)
     int exclamation_mark_pos = l.indexOf('!');
 
     nickname = l.left(exclamation_mark_pos);
-    username = l.mid(exclamation_mark_pos + 1, at_pos);
+    username = l.mid(exclamation_mark_pos + 1, at_pos - exclamation_mark_pos - 1);
     hostname = l.mid(at_pos + 1, l.size());
 
     return Hostmask(nickname, username, hostname);

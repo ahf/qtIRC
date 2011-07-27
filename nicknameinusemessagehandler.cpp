@@ -13,7 +13,4 @@ void NicknameInUseMessageHandler::handle(Client *client, const Message &)
     QString newNickname = oldNickname + "_";
 
     client->sendNick(newNickname);
-
-    // For the UI.
-    client->nicknameChanged(oldNickname, newNickname);
 }
