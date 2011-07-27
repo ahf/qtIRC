@@ -39,6 +39,8 @@ public:
     void sendUser(const QString& username, const QString& realname, const QString& hostname);
     void sendJoin(const QString& channel);
     void sendQuit(const QString& message);
+    void sendPong(const QString& message);
+    void sendRaw(const QString& message);
 
 signals:
     void ReceivedMessage(const Message& message);

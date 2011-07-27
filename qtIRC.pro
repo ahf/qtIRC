@@ -16,13 +16,15 @@ SOURCES += main.cpp\
     hostmask.cpp \
     client.cpp \
     messagehandler.cpp \
-    nicknameinusemessagehandler.cpp
+    nicknameinusemessagehandler.cpp \
+    pingmessagehandler.cpp
 
 HEADERS  += mainwindow.h \
     message.h \
     hostmask.h \
     client.h \
     messagehandler.h \
-    nicknameinusemessagehandler.h
+    nicknameinusemessagehandler.h \
+    pingmessagehandler.h
 
 FORMS    += mainwindow.ui

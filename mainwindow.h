@@ -17,10 +17,14 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void onReturnPressed();
+
 private:
     void append(const QString& line);
 
     Ui::MainWindow *ui;
+    Client *_client;
 };
 
 #endif // MAINWINDOW_H

@@ -10,7 +10,7 @@ Client::Client(QObject *parent) :
     // We ignore SSL errors since most IRC servers uses invalid certificates.
     connect(_socket, SIGNAL(sslErrors(QList<QSslError>)), _socket, SLOT(ignoreSslErrors()));
 
-    connect(_socket, SIGNAL(encrypted()), SLOT(connectionEstablished()));
+    connect(_socket, SIGNAL(connected()), SLOT(connectionEstablished()));
     connect(_socket, SIGNAL(readyRead()), SLOT(readData()));
 
     // Send messages to dispatching.
@@ -44,9 +44,19 @@ void Client::sendQuit(const QString &message)
     writeLine(QString("QUIT :%1").arg(message));
 }
 
+void Client::sendPong(const QString &message)
+{
+    writeLine(QString("PONG :%1").arg(message));
+}
+
+void Client::sendRaw(const QString &message)
+{
+    writeLine(message);
+}
+
 void Client::connectToServer()
 {
-    _socket->connectToHostEncrypted(_server_hostname, _server_port);
+    _socket->connectToHost(_server_hostname, _server_port);
 }
 
 void Client::writeLine(const QString &line)
