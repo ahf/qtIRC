@@ -41,10 +41,15 @@ public:
     void sendQuit(const QString& message);
     void sendPong(const QString& message);
     void sendRaw(const QString& message);
+    void sendPrivmsg(const QString& target, const QString& text);
+
+    void didReceivePrivmsg(const Hostmask& hostmask, const QString& target, const QString& text);
 
 signals:
     void ReceivedMessage(const Message& message);
     void Connected();
+
+    void PrivmsgReceived(const Hostmask& hostmask, const QString& target, const QString& text);
 
 private slots:
     void readData();

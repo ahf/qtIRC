@@ -54,6 +54,16 @@ void Client::sendRaw(const QString &message)
     writeLine(message);
 }
 
+void Client::sendPrivmsg(const QString &target, const QString &text)
+{
+    writeLine(QString("PRIVMSG %1 :%2").arg(target).arg(text));
+}
+
+void Client::didReceivePrivmsg(const Hostmask &hostmask, const QString &target, const QString &text)
+{
+    emit PrivmsgReceived(hostmask, target, text);
+}
+
 void Client::connectToServer()
 {
     _socket->connectToHost(_server_hostname, _server_port);

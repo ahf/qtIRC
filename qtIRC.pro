@@ -17,7 +17,9 @@ SOURCES += main.cpp\
     client.cpp \
     messagehandler.cpp \
     nicknameinusemessagehandler.cpp \
-    pingmessagehandler.cpp
+    pingmessagehandler.cpp \
+    privmsgmessagehandler.cpp \
+    endofmotdmessagehandler.cpp
 
 HEADERS  += mainwindow.h \
     message.h \
@@ -25,6 +27,8 @@ HEADERS  += mainwindow.h \
     client.h \
     messagehandler.h \
     nicknameinusemessagehandler.h \
-    pingmessagehandler.h
+    pingmessagehandler.h \
+    privmsgmessagehandler.h \
+    endofmotdmessagehandler.h
 
 FORMS    += mainwindow.ui

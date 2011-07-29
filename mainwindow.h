@@ -4,10 +4,12 @@
 #include <QMainWindow>
 
 #include "client.h"
+#include "hostmask.h"
 
 namespace Ui {
     class MainWindow;
 }
+
 
 class MainWindow : public QMainWindow
 {
@@ -19,6 +21,7 @@ public:
 
 private slots:
     void onReturnPressed();
+    void onPrivmsgReceived(const Hostmask& hostmask, const QString& target, const QString& text);
 
 private:
     void append(const QString& line);
