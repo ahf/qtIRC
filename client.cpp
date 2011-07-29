@@ -89,7 +89,7 @@ void Client::readData()
 {
     while (_socket->canReadLine())
     {
-        QString line = _socket->readLine();
+        QString line = QString::fromUtf8(_socket->readLine());
         line.remove("\r\n");
 
         qDebug() << "Recv:" << line;
